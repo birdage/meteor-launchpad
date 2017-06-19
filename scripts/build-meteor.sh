@@ -13,13 +13,20 @@ export METEOR_ALLOW_SUPERUSER=true
 cd $APP_SOURCE_DIR
 
 # Install app deps
-printf "\n[-] Running npm install in app directory...\n\n"
-meteor npm install
+#printf "\n[-] Running npm install in app directory...\n\n"
+#meteor npm install
+printf "\n[-] Make the app bundle directory...\n\n"
+# make the dir
+mkdir -p $APP_BUNDLE_DIR
+
+# adding the bundle
+printf "\n[-] Adding Meteor bundle...\n\n"
+ADD ../xmp-package/xmp.tar.gz $APP_BUNDLE_DIR/xmp.tar.gz
+tar -xzf xmp.tar.gz -C ./
 
 # build the bundle
-printf "\n[-] Building Meteor application...\n\n"
-mkdir -p $APP_BUNDLE_DIR
-meteor build --directory $APP_BUNDLE_DIR
+#printf "\n[-] Building Meteor application...\n\n"
+#meteor build --directory $APP_BUNDLE_DIR
 
 # run npm install in bundle
 printf "\n[-] Running npm install in the server bundle...\n\n"
