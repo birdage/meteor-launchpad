@@ -21,9 +21,8 @@ mkdir -p $APP_BUNDLE_DIR
 
 # adding the bundle
 printf "\n[-] Adding Meteor bundle...\n\n"
-ADD ../xmp-package/xmp.tar.gz $APP_BUNDLE_DIR/xmp.tar.gz
-tar -xzf xmp.tar.gz -C ./
 
+tar -xzf xmp.tar.gz -C ./
 # build the bundle
 #printf "\n[-] Building Meteor application...\n\n"
 #meteor build --directory $APP_BUNDLE_DIR

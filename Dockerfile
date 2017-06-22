@@ -19,6 +19,8 @@ ENV APP_SOURCE_DIR /opt/meteor/src
 ENV APP_BUNDLE_DIR /opt/meteor/dist
 ENV BUILD_SCRIPTS_DIR /opt/build_scripts
 
+ADD ../xmp-package/xmp.tar.gz $APP_BUNDLE_DIR/xmp.tar.gz
+
 # Add entrypoint and build scripts
 COPY scripts $BUILD_SCRIPTS_DIR
 RUN chmod -R 750 $BUILD_SCRIPTS_DIR
